@@ -1,0 +1,67 @@
+.buttonsAnchorPane{
+    -fx-background-color: #404042
+    
+}
+
+.scroll-pane{
+    -fx-color: #404042
+}    
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+ }
+
+.accordionPane{
+    -fx-color: #404042
+}
+
+.split-pane > .split-pane-divider {  
+    -fx-padding: 0;
+} 
+
+.scrollPaneButtons > .scroll-bar{  
+    -fx-color: #404042;
+    -fx-background-color: #404042;
+     
+} 
+
+.searchPane > .title{
+    -fx-color:#404042;
+}
+
+.menu-bar{
+    -fx-background-color: #c7c7ca;
+}
+
+.text-area-pane{
+    -fx-background-color: rgb(30, 30, 30);
+}
+
+.middle-pane{
+    -fx-background-color: rgb(37, 37, 38);
+}
+
+.side-bar{
+    -fx-background-color: rgb(51, 51, 51);
+}
+
+.split-pane{
+    -fx-background-color: #404042;
+}
+
+.right-anchor-pane{
+    -fx-background-color: rgb(37, 37, 38);
+}
+
+.numbers-pane > .title 
+{
+-fx-background-color: rgb(255, 255, 255);
+-fx-background-insets: 0, 0, 0;
+-fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+-fx-padding: 0 0 0 0; /* 2 10 3 10 */
+}
+
+.text-area > .scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}

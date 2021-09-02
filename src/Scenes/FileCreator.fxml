@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBoxMain" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controllers.CreatorController">
+   <children>
+       <MenuBar id="menuBar" fx:id="menuBar" centerShape="false" stylesheets="@StyleSheets/Creator.css" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu fx:id="openRecentMenu" mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+            <MenuItem fx:id="saveAsButton" mnemonicParsing="false" onAction="#saveFileAs" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox fx:id="hBox" prefWidth="1074.0">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="699.0" prefWidth="73.0" styleClass="side-bar" stylesheets="@StyleSheets/Creator.css">
+               <children>
+                  <Button layoutX="7.0" layoutY="71.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="60.0" text="Editor">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="openChatButton" layoutX="7.0" layoutY="163.0" mnemonicParsing="false" onAction="#openChatButtonPressed" prefHeight="46.0" prefWidth="60.0" text="AI Chat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="7.0" layoutY="256.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="60.0" text="Preview">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <Glow level="0.0" />
+               </effect>
+            </AnchorPane>
+            <SplitPane fx:id="splitPane" dividerPositions="0.44488977955911824" prefHeight="700.0" prefWidth="1000.0" stylesheets="@StyleSheets/Creator.css">
+              <items>
+                  <ScrollPane id="middle-panemiddle-pane" prefHeight="706.0" prefWidth="422.0" styleClass="middle-pane" stylesheets="@StyleSheets/Creator.css">
+                     <content>
+                      <AnchorPane id="middle-pane" minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="425.0" styleClass="middle-pane" stylesheets="@StyleSheets/Creator.css">
+                           <children>
+                              <TextField fx:id="searchBar" layoutX="127.0" layoutY="53.0" prefHeight="37.0" prefWidth="170.0" promptText="Search">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <effect>
+                                    <InnerShadow choke="0.5" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </TextField>
+                              <Accordion id="accordionPane" fx:id="buttonsPane" layoutX="36.0" layoutY="108.0" prefHeight="246.0" prefWidth="352.0" styleClass="accordionPane" stylesheets="@StyleSheets/Creator.css" AnchorPane.leftAnchor="36.0">
+                                <panes>
+                                  <TitledPane fx:id="linesLP" animated="false" prefHeight="350.0" prefWidth="369.0" styleClass="accordionPane" text="Points and Lines" textFill="WHITE">
+                                       <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="355.0" styleClass="buttonsAnchorPane" stylesheets="@StyleSheets/Creator.css" />
+                                       </content>
+                                  </TitledPane>
+                                    <TitledPane fx:id="twoDLP" animated="false" layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="78.0" styleClass="accordionPane" text="2D Shapes" textFill="WHITE">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="380.0" styleClass="buttonsAnchorPane" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="utilLP" animated="false" styleClass="accordionPane" text="Utilities" textFill="WHITE">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" styleClass="accordionPane" text="Misc." textFill="WHITE">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="103.0" prefWidth="340.0">
+                                             <children>
+                                                <Button fx:id="addCommentButton" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCommentPressed" prefHeight="29.0" prefWidth="323.0" text="Add Comment" />
+                                                <Button fx:id="addSpaceButton" layoutX="9.0" layoutY="41.0" mnemonicParsing="false" onAction="#addSpacePressed" prefHeight="29.0" prefWidth="323.0" text="Add Space" />
+                                                <Button fx:id="endProgramButton" layoutX="9.0" layoutY="70.0" mnemonicParsing="false" onAction="#endProgramPressed" prefHeight="29.0" prefWidth="323.0" text="End Program" />
+                                             </children></AnchorPane>
+                                      </content>
+                                    </TitledPane>
+                                </panes>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                              </Accordion>
+                              <TitledPane id="searchPane" fx:id="resultsPane" alignment="CENTER" animated="false" collapsible="false" layoutX="111.0" layoutY="90.0" prefHeight="238.0" prefWidth="202.0" styleClass="searchPane" text="Results..." textFill="WHITE" visible="false">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="200.0" />
+                                </content>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <effect>
+                        <Glow level="0.0" />
+                     </effect>
+                  </ScrollPane>
+                  <ScrollPane>
+                     <content>
+                        <Pane fx:id="textAreaPane" prefHeight="698.0" prefWidth="553.0" styleClass="right-anchor-pane">
+                           <children>
+                              <TextArea fx:id="textArea" editable="false" focusTraversable="false" layoutX="17.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="537.0" wrapText="true">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextArea>
+                              <TitledPane fx:id="lineNumbersPane" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutY="-2.0" prefHeight="700.0" prefWidth="20.0" styleClass="numbers-pane" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="1.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <effect>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                 </effect></TitledPane>
+                           </children>
+                        </Pane>
+                     </content>
+                  </ScrollPane>
+              </items>
+            </SplitPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

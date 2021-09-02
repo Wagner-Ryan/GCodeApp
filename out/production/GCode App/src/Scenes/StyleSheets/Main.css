@@ -1,0 +1,47 @@
+.anchor-pane{
+    -fx-background-color: #28282b
+}
+
+.stack-pane{
+    -fx-background-color: #404042
+}
+
+.button{
+    -fx-background-color: #626266;
+    -fx-background-radius: 2;
+}
+
+.button:hover{
+    -fx-background-color: #8f8f94;
+}
+
+
+.menu-bar{
+    -fx-background-color: #c7c7ca;
+}
+
+.split-pane > .split-pane-divider {  
+    -fx-padding: 0.01 0.01em 0.01 0.01em; 
+    -fx-color: #2b2a2a;
+} 
+
+.split-pane{  
+    -fx-background-color: #404042;
+} 
+
+.anchor-pane-left{
+    -fx-background-color: #3f3f42;
+}
+
+.titled-pane {
+    -fx-color: #3f3f4200;
+}   
+
+.titled-pane > .title:hover {
+    -fx-color:#3f3f4200;
+}
+
+.titled-pane > .content{
+    -fx-background-color: #3f3f42;
+    -fx-border-width: 0px;
+}
